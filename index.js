@@ -1,12 +1,12 @@
 const express = require('express');
-const { mongoose } = require('./config/database');
+const app = express()
+var cors = require('cors')
 
 const port = process.env.PORT || 3005
+app.use(cors())
 
 var csvjson = require('csvjson');
 var fs = require('fs');
-
-const app = express()
 
 app.get('/products', (req, res) => {
 
